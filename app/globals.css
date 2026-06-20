@@ -1,26 +1,141 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7f8fb;
+  --foreground: #111827;
+  --surface: #ffffff;
+  --muted: #eef3f8;
+  --brand: #07106f;
+  --brand-strong: #03083f;
+  --accent: #f8c400;
+  --sky: #15aeea;
+  --space-section-y: 6rem;
+  --space-section-y-lg: 9rem;
+  --radius-card: 1rem;
+  --radius-media: 1.35rem;
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-muted: var(--muted);
+  --color-brand: var(--brand);
+  --color-brand-strong: var(--brand-strong);
+  --color-accent: var(--accent);
+  --color-sky: var(--sky);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  min-height: 100%;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(21, 174, 234, 0.1), transparent 32rem),
+    var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  text-rendering: geometricPrecision;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--foreground);
+}
+
+img {
+  max-width: 100%;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.premium-watermark {
+  animation: premium-watermark-drift 18s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+.premium-background-image {
+  animation: premium-background-breathe 18s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+.section-spacing {
+  padding-block: var(--space-section-y);
+}
+
+.section-spacing-grand {
+  padding-block: var(--space-section-y-lg);
+}
+
+.heading-premium {
+  text-wrap: balance;
+  font-weight: 900;
+  line-height: 1.02;
+  letter-spacing: 0;
+}
+
+.body-premium {
+  text-wrap: pretty;
+  line-height: 2;
+}
+
+@media (min-width: 1024px) {
+  .section-spacing {
+    padding-block: var(--space-section-y-lg);
+  }
+
+  .section-spacing-grand {
+    padding-block: 10rem;
+  }
+}
+
+@keyframes premium-watermark-drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(14px, -10px, 0) scale(1.025);
+  }
+}
+
+@keyframes premium-background-breathe {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.035);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
 }
