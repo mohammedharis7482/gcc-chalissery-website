@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
-import { createMetadata } from "@/lib/metadata";
 
 import "./globals.css";
 
@@ -18,13 +17,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "GCC Chalissery Football Academy",
   description: "Official GCC Chalissery Football Academy Website",
   icons: {
     icon: "/icon.png",
     shortcut: "/icon.png",
-    apple: "/icon.png",
+    apple: "/apple-icon.png",
   },
 };
 
@@ -42,7 +41,7 @@ export default function RootLayout({
       <body>
         <div className="flex min-h-screen flex-col bg-background text-foreground">
           <SiteHeader />
-          <main className="flex-1 pt-[84px]">{children}</main>
+          <main className="flex-1 pt-[76px] lg:pt-[84px]">{children}</main>
           <SiteFooter />
         </div>
       </body>

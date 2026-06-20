@@ -34,7 +34,7 @@ export function SiteHeader() {
           : "shadow-sm shadow-brand/5",
       ].join(" ")}
     >
-      <Container className="flex h-[84px] items-center justify-between gap-6">
+      <Container className="flex h-[76px] items-center justify-between gap-4 lg:h-[84px] lg:gap-6">
         <BrandMark />
         <div className="hidden items-center gap-6 lg:flex">
           <nav

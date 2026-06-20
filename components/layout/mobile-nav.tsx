@@ -18,7 +18,7 @@ export function MobileNav() {
       <button
         aria-expanded={isOpen}
         aria-label={isOpen ? "Close menu" : "Open menu"}
-        className="grid size-11 place-items-center border border-brand/15 bg-white text-brand shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+        className="grid size-10 place-items-center border border-brand/15 bg-white text-brand shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
         onClick={() => setIsOpen((current) => !current)}
         type="button"
       >
@@ -32,7 +32,7 @@ export function MobileNav() {
         {isOpen ? (
           <motion.div
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            className="absolute inset-x-0 top-[84px] z-[1000] border-b border-brand/10 bg-white px-4 py-5 shadow-2xl shadow-brand/10"
+            className="absolute inset-x-0 top-[76px] z-[1000] border-b border-brand/10 bg-white px-4 py-4 shadow-2xl shadow-brand/10"
             exit={{ opacity: 0, y: -10, scale: 0.985 }}
             initial={prefersReducedMotion ? false : { opacity: 0, y: -10, scale: 0.985 }}
             transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}

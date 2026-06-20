@@ -44,6 +44,13 @@ const coachingStandards = [
   },
 ] as const;
 
+const mobileProgramDescriptions = [
+  "First-touch learning through ball mastery, movement, and confidence.",
+  "Technical growth, tactical awareness, and disciplined team habits.",
+  "Fitness, match tempo, and competitive readiness.",
+  "Exposure, leadership, and advanced football preparation.",
+] as const;
+
 export default function AcademyPage() {
   return (
     <>
@@ -93,7 +100,7 @@ export default function AcademyPage() {
               return (
                 <FadeIn
                   className={[
-                    "group relative min-h-[410px] overflow-hidden rounded-[1.15rem] border border-white/10 bg-brand shadow-xl shadow-black/15 transition duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-2xl hover:shadow-black/20",
+                    "group relative min-h-[390px] overflow-hidden rounded-[1.15rem] border border-white/10 bg-brand shadow-xl shadow-black/15 transition duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-2xl hover:shadow-black/20 sm:min-h-[410px]",
                     isFeatured ? "lg:col-span-2 lg:row-span-2" : "",
                     isWide ? "lg:col-span-2" : "",
                   ].join(" ")}
@@ -124,15 +131,15 @@ export default function AcademyPage() {
                     ].join(" ")}
                   />
                   <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-accent via-accent/25 to-transparent" />
-                  <div className="absolute left-5 top-5 grid size-14 place-items-center rounded-full border border-white/20 bg-white/12 text-sm font-black text-accent shadow-xl shadow-black/15 backdrop-blur-md">
+                  <div className="absolute left-5 top-5 grid size-12 place-items-center rounded-full border border-white/20 bg-white/12 text-sm font-black text-accent shadow-xl shadow-black/15 backdrop-blur-md sm:size-14">
                     {program.ageGroup}
                   </div>
                   <div
                     className={[
                       "absolute inset-x-0 bottom-0 flex flex-col text-white",
                       isCompact
-                        ? "min-h-[62%] p-6 sm:p-7"
-                        : "min-h-[55%] justify-end p-6 sm:p-7",
+                        ? "min-h-[66%] p-5 pb-7 sm:min-h-[62%] sm:p-7"
+                        : "min-h-[62%] justify-end p-5 pb-7 sm:min-h-[55%] sm:p-7",
                     ].join(" ")}
                   >
                     <p className="text-xs font-black uppercase tracking-[0.18em] text-accent">
@@ -140,25 +147,25 @@ export default function AcademyPage() {
                     </p>
                     <h2
                       className={[
-                        "mt-3 font-black leading-tight text-white [text-shadow:0_2px_14px_rgba(0,0,0,0.46)]",
+                        "mt-2.5 font-black leading-tight text-white [text-shadow:0_2px_14px_rgba(0,0,0,0.46)] sm:mt-3",
                         isFeatured
-                          ? "text-4xl sm:text-5xl"
+                          ? "text-[2rem] sm:text-5xl"
                           : isCompact
-                            ? "text-2xl"
-                            : "text-3xl",
+                            ? "text-[1.78rem] sm:text-2xl"
+                            : "text-[1.85rem] sm:text-3xl",
                       ].join(" ")}
                     >
                       {program.title}
                     </h2>
                     <p
                       className={[
-                        "mt-3 max-w-xl text-blue-50/80 [text-shadow:0_2px_12px_rgba(0,0,0,0.38)]",
-                        isCompact ? "line-clamp-2 text-sm leading-6" : "text-sm leading-7",
+                        "mt-2.5 max-w-xl text-[0.95rem] leading-6 text-blue-50/82 [text-shadow:0_2px_12px_rgba(0,0,0,0.38)] sm:mt-3",
+                        isCompact ? "line-clamp-2 sm:text-sm sm:leading-6" : "sm:text-sm sm:leading-7",
                       ].join(" ")}
                     >
-                      {program.description}
+                      {mobileProgramDescriptions[index]}
                     </p>
-                    <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[0.66rem] font-black uppercase tracking-[0.11em] text-blue-50/82">
+                    <div className="mt-3 flex flex-wrap items-center gap-x-2.5 gap-y-1.5 text-[0.68rem] font-black uppercase tracking-[0.1em] text-blue-50/82 sm:mt-4 sm:gap-x-3 sm:text-[0.66rem] sm:tracking-[0.11em]">
                       <span className="text-accent">Training</span>
                       <span>
                         {program.training}
@@ -169,10 +176,10 @@ export default function AcademyPage() {
                         {program.focus}
                       </span>
                     </div>
-                    <div className="mt-4 flex flex-wrap gap-1.5">
+                    <div className="mt-3 flex flex-wrap gap-2 sm:mt-4 sm:gap-1.5">
                       {program.tags.map((tag) => (
                         <span
-                          className="border border-white/12 bg-white/[0.07] px-2.5 py-1 text-[0.58rem] font-black uppercase tracking-[0.09em] text-white/82 backdrop-blur transition group-hover:border-accent/30 group-hover:text-white"
+                          className="border border-white/12 bg-white/[0.07] px-2.5 py-1 text-[0.68rem] font-black uppercase tracking-[0.08em] text-white/82 backdrop-blur transition group-hover:border-accent/30 group-hover:text-white sm:text-[0.58rem] sm:tracking-[0.09em]"
                           key={tag}
                         >
                           {tag}

@@ -42,6 +42,13 @@ export const metadata: Metadata = createMetadata({
   path: "/",
 });
 
+const mobileProgramDescriptions = [
+  "First-touch learning through ball mastery, movement, and confidence.",
+  "Technical growth, tactical awareness, and disciplined team habits.",
+  "Fitness, match tempo, and competitive readiness.",
+  "Exposure, leadership, and advanced football preparation.",
+] as const;
+
 export default function HomePage() {
   return (
     <>
@@ -474,7 +481,7 @@ function AcademyPrograms() {
             return (
               <FadeIn
                 className={[
-                  "group relative min-h-[390px] overflow-hidden rounded-[1.1rem] border border-white/10 bg-brand-strong shadow-xl shadow-black/18 transition duration-300 hover:-translate-y-1 hover:border-accent/35 hover:shadow-2xl hover:shadow-black/24 sm:min-h-[420px]",
+                  "group relative min-h-[380px] overflow-hidden rounded-[1.1rem] border border-white/10 bg-brand-strong shadow-xl shadow-black/18 transition duration-300 hover:-translate-y-1 hover:border-accent/35 hover:shadow-2xl hover:shadow-black/24 sm:min-h-[420px]",
                   isCompact ? "lg:min-h-[420px]" : "",
                   isFeatured ? "lg:col-span-2 lg:row-span-2" : "",
                   index === 1 ? "lg:col-span-2" : "",
@@ -521,7 +528,7 @@ function AcademyPrograms() {
                     {program.ageGroup}
                   </span>
                   {!isCompact ? (
-                    <span className="border border-accent/25 bg-brand-strong/35 px-3 py-1.5 text-[0.64rem] font-black uppercase tracking-[0.18em] text-accent shadow-lg shadow-black/10 backdrop-blur-md">
+                    <span className="hidden border border-accent/25 bg-brand-strong/35 px-3 py-1.5 text-[0.64rem] font-black uppercase tracking-[0.18em] text-accent shadow-lg shadow-black/10 backdrop-blur-md lg:inline-block">
                       Player pathway
                     </span>
                   ) : null}
@@ -530,8 +537,8 @@ function AcademyPrograms() {
                   className={[
                     "absolute inset-x-0 bottom-0 flex flex-col text-white",
                     isCompact
-                      ? "h-[68%] p-[18px] pb-7 sm:p-5 sm:pb-7 lg:px-6 lg:pb-7 lg:pt-6"
-                      : "min-h-[56%] justify-end p-6 sm:p-7",
+                      ? "h-[66%] p-5 pb-7 sm:p-5 sm:pb-7 lg:h-[68%] lg:px-6 lg:pb-7 lg:pt-6"
+                      : "min-h-[62%] justify-end p-5 pb-7 sm:min-h-[56%] sm:p-7",
                   ].join(" ")}
                 >
                   {isCompact ? (
@@ -540,21 +547,25 @@ function AcademyPrograms() {
                         <p className="text-[0.62rem] font-black uppercase tracking-[0.18em] text-accent">
                           Player pathway
                         </p>
-                        <h3 className="mt-3 text-[1.45rem] font-black leading-tight text-white [text-shadow:0_2px_14px_rgba(0,0,0,0.48)] sm:text-[1.55rem]">
+                        <h3 className="mt-2.5 text-[1.78rem] font-black leading-tight text-white [text-shadow:0_2px_14px_rgba(0,0,0,0.48)] sm:text-[1.55rem] lg:mt-3 lg:text-[1.55rem]">
                           {program.title}
                         </h3>
-                        <p className="mt-3 line-clamp-2 max-w-sm text-[0.82rem] leading-5 text-blue-50/80 [text-shadow:0_2px_12px_rgba(0,0,0,0.42)]">
-                          {program.description}
+                        <p className="mt-2.5 line-clamp-2 max-w-sm text-[0.94rem] leading-6 text-blue-50/82 [text-shadow:0_2px_12px_rgba(0,0,0,0.42)] lg:mt-3 lg:text-[0.82rem] lg:leading-5">
+                          {mobileProgramDescriptions[index]}
                         </p>
-                        <p className="mt-4 text-[0.66rem] font-black uppercase tracking-[0.12em] text-blue-50/78">
-                          <span className="text-accent">{program.training}</span>
+                        <p className="mt-3 text-[0.68rem] font-black uppercase tracking-[0.1em] text-blue-50/78 lg:mt-4 lg:text-[0.66rem] lg:tracking-[0.12em]">
+                          <span className="text-accent">Training</span>
+                          <span className="mx-2 text-blue-50/42">·</span>
+                          {program.training}
+                          <span className="mx-2 text-blue-50/42">·</span>
+                          <span className="text-accent">Focus</span>
                           <span className="mx-2 text-blue-50/42">·</span>
                           {program.focus}
                         </p>
-                        <div className="mt-4 flex flex-wrap items-center gap-1.5">
+                        <div className="mt-3 flex flex-wrap items-center gap-2 lg:mt-4 lg:gap-1.5">
                           {program.tags.map((tag) => (
                             <span
-                              className="border border-white/12 bg-white/[0.07] px-2 py-0.5 text-[0.58rem] font-black uppercase tracking-[0.09em] text-white/82 backdrop-blur transition group-hover:border-accent/30 group-hover:text-white"
+                              className="border border-white/12 bg-white/[0.07] px-2 py-0.5 text-[0.66rem] font-black uppercase tracking-[0.08em] text-white/82 backdrop-blur transition group-hover:border-accent/30 group-hover:text-white lg:text-[0.58rem] lg:tracking-[0.09em]"
                               key={tag}
                             >
                               {tag}
@@ -575,35 +586,38 @@ function AcademyPrograms() {
                     </>
                   ) : (
                     <>
+                      <p className="text-[0.64rem] font-black uppercase tracking-[0.18em] text-accent lg:hidden">
+                        Player pathway
+                      </p>
                       <h3
                         className={[
                           "font-black leading-tight text-white [text-shadow:0_2px_14px_rgba(0,0,0,0.48)]",
-                          isFeatured ? "text-4xl sm:text-5xl" : "text-3xl",
+                          isFeatured ? "mt-2.5 text-[2rem] sm:mt-0 sm:text-5xl" : "mt-2.5 text-[1.85rem] sm:mt-0 sm:text-3xl",
                         ].join(" ")}
                       >
                         {program.title}
                       </h3>
                       <p
                         className={[
-                          "mt-3 line-clamp-2 text-blue-50/82 [text-shadow:0_2px_12px_rgba(0,0,0,0.42)]",
+                          "mt-2.5 line-clamp-2 text-blue-50/82 [text-shadow:0_2px_12px_rgba(0,0,0,0.42)] sm:mt-3",
                           isFeatured
-                            ? "max-w-xl text-base leading-7"
-                            : "max-w-md text-sm leading-7",
+                            ? "max-w-xl text-[0.95rem] leading-6 sm:text-base sm:leading-7"
+                            : "max-w-md text-[0.95rem] leading-6 sm:text-sm sm:leading-7",
                         ].join(" ")}
                       >
-                        {program.description}
+                        {mobileProgramDescriptions[index]}
                       </p>
-                      <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-[0.68rem] font-black uppercase tracking-[0.12em] text-blue-50/82">
+                      <div className="mt-3 flex flex-wrap items-center gap-x-2.5 gap-y-1.5 text-[0.68rem] font-black uppercase tracking-[0.1em] text-blue-50/82 sm:mt-4 sm:gap-x-3 sm:tracking-[0.12em]">
                         <span className="text-accent">Training</span>
                         <span>{program.training}</span>
                         <span className="h-1 w-1 rounded-full bg-accent/80" />
                         <span className="text-accent">Focus</span>
                         <span>{program.focus}</span>
                       </div>
-                      <div className="mt-4 flex flex-wrap items-center gap-1.5">
+                      <div className="mt-3 flex flex-wrap items-center gap-2 sm:mt-4 sm:gap-1.5">
                         {program.tags.map((tag) => (
                           <span
-                            className="border border-white/12 bg-white/[0.07] px-2.5 py-1 text-[0.62rem] font-black uppercase tracking-[0.1em] text-white/82 backdrop-blur transition group-hover:border-accent/30 group-hover:text-white"
+                            className="border border-white/12 bg-white/[0.07] px-2.5 py-1 text-[0.68rem] font-black uppercase tracking-[0.08em] text-white/82 backdrop-blur transition group-hover:border-accent/30 group-hover:text-white sm:text-[0.62rem] sm:tracking-[0.1em]"
                             key={tag}
                           >
                             {tag}

@@ -44,7 +44,8 @@ export function createMetadata({
     },
     icons: {
       icon: "/icon.png",
-      apple: "/logos/gcc-logo.png",
+      shortcut: "/icon.png",
+      apple: "/apple-icon.png",
     },
   };
 }

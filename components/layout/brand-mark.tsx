@@ -24,22 +24,22 @@ export function BrandMark({ footer = false }: BrandMarkProps) {
   }
 
   return (
-    <Link className="inline-flex items-center gap-3.5" href="/" aria-label="Home">
-      <span className="relative size-[3.75rem] shrink-0 overflow-hidden rounded-full sm:size-[4.25rem]">
+    <Link className="inline-flex items-center gap-2 lg:gap-2.5" href="/" aria-label="Home">
+      <span className="relative size-[42px] shrink-0 overflow-hidden rounded-full sm:size-12">
         <Image
           alt=""
           className="size-full object-cover object-center"
           fill
           priority
-          sizes="72px"
+          sizes="48px"
           src="/logos/gcc-logo.png"
         />
       </span>
       <span className="leading-none">
-        <span className="block text-sm font-black uppercase tracking-normal text-brand sm:text-base">
+        <span className="block text-[0.9rem] font-black uppercase tracking-normal text-brand sm:text-[0.95rem]">
           GCC Chalissery
         </span>
-        <span className="mt-1.5 block text-[0.68rem] font-black uppercase tracking-[0.16em] text-neutral-500">
+        <span className="mt-0.5 block text-[0.6rem] font-black uppercase tracking-[0.12em] text-neutral-500 sm:mt-1 sm:text-[0.64rem] sm:tracking-[0.14em]">
           Football Academy
         </span>
       </span>
