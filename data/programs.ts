@@ -2,24 +2,24 @@ import type { AcademyProgram } from "@/types/site";
 
 export const academyPrograms: AcademyProgram[] = [
   {
-    title: "U-14 Development",
-    ageGroup: "U-14",
+    title: "U-10 Foundation Program",
+    ageGroup: "U-10",
     summary:
-      "A structured foundation for young players moving from grassroots football into disciplined academy training.",
-    highlights: ["Technical base", "Game understanding", "Training discipline"],
+      "First-touch learning through ball mastery, coordination, movement, confidence, and enjoyment of football.",
+    highlights: ["Ball mastery", "Coordination", "Confidence"],
   },
   {
-    title: "U-17 Performance",
-    ageGroup: "U-17",
+    title: "U-13 Development Program",
+    ageGroup: "U-13",
     summary:
-      "A career-focused program for players preparing for higher-level competition and professional pathways.",
-    highlights: ["Position-specific work", "Match readiness", "Professional habits"],
+      "Technical growth, tactical awareness, team play, decision making, and physical development.",
+    highlights: ["Technical development", "Game understanding", "Team play"],
   },
   {
-    title: "Pathway Training",
-    ageGroup: "Selected players",
+    title: "U-15 Performance Program",
+    ageGroup: "U-15",
     summary:
-      "Additional development support for talented players identified for advanced opportunities in Kerala and beyond.",
-    highlights: ["Player mentoring", "Career guidance", "Competitive exposure"],
+      "Advanced techniques, tactical intelligence, match fitness, leadership, and professional preparation.",
+    highlights: ["Match fitness", "Leadership", "Professional preparation"],
   },
 ];

@@ -75,6 +75,22 @@ button:focus-visible {
   transform-origin: center;
 }
 
+.home-gallery-marquee {
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+  animation: home-gallery-marquee 24s linear infinite;
+  will-change: transform;
+}
+
+.home-gallery-marquee > * {
+  flex: 0 0 auto;
+}
+
+.home-gallery-marquee:hover {
+  animation-play-state: paused;
+}
+
 .section-spacing {
   padding-block: var(--space-section-y);
 }
@@ -122,6 +138,22 @@ button:focus-visible {
 
   to {
     transform: scale(1.035);
+  }
+}
+
+@keyframes home-gallery-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (max-width: 640px) {
+  .home-gallery-marquee {
+    animation-duration: 20s;
   }
 }
 

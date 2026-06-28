@@ -27,6 +27,23 @@ export function ContactEnquiryForm() {
   const [values, setValues] = useState<FormValues>(initialValues);
   const [errors, setErrors] = useState<Partial<FormValues>>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const isWhatsappReady =
+    values.name.trim().length > 0 &&
+    values.phone.replace(/\D/g, "").length >= 10 &&
+    values.category.trim().length > 0 &&
+    values.message.trim().length > 0;
+  const whatsappMessage = [
+    "Hello GCC Chalissery Football Academy,",
+    "",
+    "I would like to enquire about academy admission/trial session.",
+    `Name: ${values.name.trim()}`,
+    `Phone: ${values.phone.trim()}`,
+    `Player age/category: ${values.category.trim()}`,
+    `Message: ${values.message.trim()}`,
+  ].join("\n");
+  const whatsappHref = `${siteConfig.contact.whatsapp}?text=${encodeURIComponent(
+    whatsappMessage,
+  )}`;
 
   function updateField(field: keyof FormValues, value: string) {
     setValues((current) => ({ ...current, [field]: value }));
@@ -80,8 +97,8 @@ export function ContactEnquiryForm() {
           Share the player details.
         </h2>
         <p className="mt-3 text-sm leading-7 text-blue-50/70">
-          This preview validates the form on the page. Final launch can connect
-          it to WhatsApp, email, or a client workflow.
+          Complete the basic details and use WhatsApp for the fastest academy
+          follow-up.
         </p>
       </div>
       <div className="grid gap-5 sm:grid-cols-2">
@@ -108,7 +125,7 @@ export function ContactEnquiryForm() {
           label="Player age/category"
           name="category"
           onChange={(value) => updateField("category", value)}
-          placeholder="U-14 / U-17 / player age"
+          placeholder="U-10 / U-13 / U-15 / player age"
           value={values.category}
         />
       </div>
@@ -144,8 +161,8 @@ export function ContactEnquiryForm() {
             transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
           >
             <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-accent" />
-            Enquiry noted. The form is ready for client connection; no message
-            is sent in this frontend preview.
+            Enquiry details are ready. For immediate confirmation, send the
+            details to GCC through WhatsApp.
           </motion.div>
         ) : null}
       </AnimatePresence>
@@ -155,14 +172,27 @@ export function ContactEnquiryForm() {
           Submit Enquiry
           <ArrowRight className="size-4" aria-hidden="true" />
         </button>
-        <Link
-          className={buttonClassName("secondaryDark", "lg", "w-full sm:w-auto")}
-          href={siteConfig.contact.whatsapp}
-          aria-label="Open GCC Chalissery WhatsApp enquiry"
-        >
-          WhatsApp
-          <MessageCircle className="size-4" aria-hidden="true" />
-        </Link>
+        {isWhatsappReady ? (
+          <Link
+            className={buttonClassName("secondaryDark", "lg", "w-full sm:w-auto")}
+            href={whatsappHref}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open GCC Chalissery WhatsApp enquiry with the form details"
+          >
+            WhatsApp
+            <MessageCircle className="size-4" aria-hidden="true" />
+          </Link>
+        ) : (
+          <button
+            className={buttonClassName("secondaryDark", "lg", "w-full sm:w-auto")}
+            disabled
+            type="button"
+          >
+            Fill form for WhatsApp
+            <MessageCircle className="size-4" aria-hidden="true" />
+          </button>
+        )}
       </div>
     </form>
   );
@@ -193,7 +223,7 @@ function Field({ error, label, name, onChange, placeholder, value }: FieldProps)
         name={name}
         onChange={(event) => onChange(event.target.value)}
         placeholder={placeholder}
-        type="text"
+        type={name === "phone" ? "tel" : "text"}
         value={value}
       />
       {error ? (

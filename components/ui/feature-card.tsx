@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 type FeatureCardProps = React.ComponentPropsWithoutRef<"article"> & {
   description: string;
   icon?: ComponentType<SVGProps<SVGSVGElement>>;
+  revealDelay?: number;
   title: string;
   variant?: "dark" | "light";
 };
@@ -14,6 +15,7 @@ export function FeatureCard({
   className,
   description,
   icon: Icon,
+  revealDelay = 0,
   title,
   variant = "dark",
   ...props
@@ -21,7 +23,11 @@ export function FeatureCard({
   const isDark = variant === "dark";
 
   return (
-    <FadeIn className="h-full" variant="scaleIn">
+    <FadeIn
+      className="h-full"
+      transition={{ delay: revealDelay }}
+      variant="scaleIn"
+    >
       <article
         className={cn(
           "group relative h-full overflow-hidden rounded-[1rem] p-5 transition duration-300 hover:-translate-y-1 sm:p-6",

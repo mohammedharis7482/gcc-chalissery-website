@@ -16,8 +16,14 @@ type CTASectionProps = {
   eyebrow: string;
   image: string;
   imageAlt?: string;
+  innerGridClassName?: string;
+  overlayClassName?: string;
   title: readonly string[];
+  trustCardClassName?: string;
+  trustGridClassName?: string;
   trustIndicators?: readonly string[];
+  trustLabelClassName?: string;
+  trustValueClassName?: string;
 };
 
 export function CTASection({
@@ -27,8 +33,14 @@ export function CTASection({
   eyebrow,
   image,
   imageAlt = "",
+  innerGridClassName,
+  overlayClassName,
   title,
+  trustCardClassName,
+  trustGridClassName,
   trustIndicators = [],
+  trustLabelClassName,
+  trustValueClassName,
 }: CTASectionProps) {
   return (
     <section
@@ -44,10 +56,20 @@ export function CTASection({
         sizes="100vw"
         src={image}
       />
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(2,6,46,0.98),rgba(3,8,63,0.84)_48%,rgba(3,8,63,0.58)),linear-gradient(180deg,rgba(3,8,63,0.32),rgba(3,8,63,0.96)),radial-gradient(circle_at_80%_20%,rgba(248,196,0,0.22),transparent_26rem)]" />
+      <div
+        className={cn(
+          "absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(2,6,46,0.98),rgba(3,8,63,0.84)_48%,rgba(3,8,63,0.58)),linear-gradient(180deg,rgba(3,8,63,0.32),rgba(3,8,63,0.96)),radial-gradient(circle_at_80%_20%,rgba(248,196,0,0.22),transparent_26rem)]",
+          overlayClassName,
+        )}
+      />
 
       <Container className={spacingTokens.sectionGrand}>
-        <div className="grid gap-12 lg:grid-cols-[1fr_0.78fr] lg:items-end">
+        <div
+          className={cn(
+            "grid gap-12 lg:grid-cols-[1fr_0.78fr] lg:items-end",
+            innerGridClassName,
+          )}
+        >
           <FadeIn>
             <Badge className="border-white/20 bg-white/10 text-accent">
               {eyebrow}
@@ -69,12 +91,21 @@ export function CTASection({
           </FadeIn>
 
           {trustIndicators.length > 0 ? (
-            <FadeIn className="grid gap-3 sm:grid-cols-2 lg:justify-self-end">
+            <FadeIn
+              className={cn(
+                "grid w-full gap-3 sm:grid-cols-2 lg:justify-self-end",
+                trustGridClassName,
+              )}
+            >
               {trustIndicators.map((indicator, index) => (
                 <StatCard
+                  className={trustCardClassName}
                   index={index}
                   key={indicator}
+                  labelClassName={trustLabelClassName}
+                  revealDelay={index * 0.06}
                   value={indicator}
+                  valueClassName={trustValueClassName}
                 />
               ))}
             </FadeIn>

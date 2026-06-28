@@ -9,6 +9,7 @@ export function SiteFooter() {
   const currentYear = new Date().getFullYear();
   const academyLinks = [
     { label: "Programs", href: "/academy" },
+    { label: "Our Team", href: "/team" },
     { label: "Admissions", href: "/admissions" },
     { label: "Gallery", href: "/gallery" },
     { label: "Achievements", href: "/achievements" },
@@ -54,7 +55,7 @@ export function SiteFooter() {
               {siteConfig.description}
             </p>
             <div className="mt-8 grid max-w-xl gap-4 sm:grid-cols-3">
-              {["Since 1980", "AIFF Affiliated", "U-14 & U-17"].map((item) => (
+              {["Since 1980", "AIFF Affiliated", "U-10 • U-13 • U-15"].map((item) => (
                 <div className="border-t border-white/15 pt-3" key={item}>
                   <p className="text-xs font-black uppercase tracking-[0.14em] text-accent">
                     {item}

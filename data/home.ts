@@ -21,23 +21,20 @@ import type {
   FeatureItem,
   GalleryItem,
 } from "@/types/site";
+import { academyPrograms, homeContent } from "@/src/data/site";
+import { galleryPreviewImages } from "@/src/data/gallery";
+import { teamAchievements } from "@/src/data/achievements";
 
 export const homeHero = {
-  eyebrow: "AIFF affiliated football academy",
-  title: "From Chalissery's playgrounds to Indian football's professional pathway.",
-  description:
-    "Welcome to GCC Chalissery Football Academy - a community-powered football academy building disciplined, talented, and career-focused players since 1980.",
-  primaryAction: "Explore Academy",
+  eyebrow: homeContent.hero.eyebrow,
+  title: homeContent.hero.title,
+  description: homeContent.hero.description,
+  primaryAction: homeContent.hero.secondaryAction,
   secondaryAction: "Contact Club",
-  image: "/images/u14-team-green.jpg",
+  image: homeContent.hero.image,
 } as const;
 
-export const heroStats = [
-  { label: "Founded", value: "1980" },
-  { label: "Affiliated", value: "AIFF" },
-  { label: "Legacy", value: "45+ Years" },
-  { label: "Focus", value: "U-14 & U-17" },
-] as const;
+export const heroStats = homeContent.hero.stats;
 
 export const legacyTimeline = [
   {
@@ -60,17 +57,17 @@ export const legacyTimeline = [
   },
   {
     year: "Today",
-    title: "Developing U-14 and U-17 football talents",
+    title: "Developing U-10, U-13, and U-15 football talents",
     description:
-      "The academy now focuses on identifying, developing, and nurturing young players for higher levels of the game.",
+      "The academy now focuses on identifying, developing, and nurturing young players through structured age-group training.",
   },
 ] as const;
 
 export const legacyImages = {
-  recognition: "/images/newspaper-recognition.jpg",
-  handover: "/images/logo-handover-wide.jpg",
-  community: "/images/academy-group-event.jpg",
-  identity: "/images/player-handshake.jpg",
+  recognition: "/academy-content/media/Screenshot 2026-06-25 at 9.14.42 AM.png",
+  handover: "/academy-content/media/WhatsApp Image 2026-06-23 at 12.50.27 PM.jpeg",
+  community: "/academy-content/media/WhatsApp Image 2026-06-23 at 12.50.26 PM.jpeg",
+  identity: "/academy-content/media/WhatsApp Image 2026-06-23 at 12.33.48 PM.jpeg",
 } as const;
 
 export const academyExcellence = {
@@ -78,26 +75,26 @@ export const academyExcellence = {
   title: "Building Footballers Beyond The Game",
   description:
     "For over four decades, GCC Chalissery has helped young players develop football skills, discipline, confidence, leadership, and a pathway toward competitive football opportunities.",
-  image: "/images/fitness-training-group.jpg",
+  image: "/academy-content/media/WhatsApp Image 2026-06-23 at 12.38.58 PM.jpeg",
   badges: ["45+ Years Legacy", "AIFF Affiliated Academy"],
   proofStats: [
     "45+ Years Legacy",
     "AIFF Affiliated",
-    "U-14 & U-17 Focus",
+    "U-10 • U-13 • U-15",
     "Community Powered",
   ],
   thumbnails: [
     {
       label: "Team Culture",
-      image: "/images/academy-group-event.jpg",
+      image: "/academy-content/media/WhatsApp Image 2026-06-23 at 12.50.26 PM.jpeg",
     },
     {
       label: "Training",
-      image: "/images/fitness-training-group.jpg",
+      image: "/academy-content/media/WhatsApp Image 2026-06-23 at 12.38.58 PM.jpeg",
     },
     {
       label: "Trophy Moment",
-      image: "/images/young-champions-trophy.jpg",
+      image: "/academy-content/achievements/u-17-runnerup-jpg.jpeg",
     },
   ],
   features: [
@@ -133,58 +130,26 @@ export const communityStory = {
   title: "Built by a football-loving community.",
   description:
     "Without the backing of large corporate funds or major sponsorships, GCC stands strong because of the passion, trust, and support of Chalissery's football community.",
-  image: "/images/academy-group-event.jpg",
+  image: "/academy-content/media/WhatsApp Image 2026-06-23 at 12.50.26 PM.jpeg",
 } as const;
 
-export const trainingStoryImage = "/images/fitness-training-group.jpg";
+export const trainingStoryImage =
+  "/academy-content/media/WhatsApp Image 2026-06-23 at 12.38.58 PM.jpeg";
 
 export const academyProgramsShowcase = {
   eyebrow: "Academy programs",
   title: "A clear pathway for every stage of young football development.",
   description:
     "From first-touch fundamentals to elite age-group preparation, GCC Chalissery builds players through structured, age-appropriate football development.",
-  programs: [
-    {
-      ageGroup: "U-10",
-      title: "Foundation Program",
-      description:
-        "First-touch learning through ball mastery, movement, and confidence.",
-      tags: ["Ball Mastery", "Movement", "Confidence"],
-      training: "2 sessions/week",
-      focus: "Ball Mastery",
-      image: "/images/academy-classroom-session.jpg",
-    },
-    {
-      ageGroup: "U-13",
-      title: "Development Program",
-      description:
-        "Technical growth, tactical awareness, and disciplined team habits.",
-      tags: ["Technique", "Game IQ", "Discipline"],
-      training: "3 sessions/week",
-      focus: "Game IQ",
-      image: "/images/u14-team-blue-wide.jpg",
-    },
-    {
-      ageGroup: "U-15",
-      title: "Performance Program",
-      description:
-        "Higher-intensity football focused on fitness and match readiness.",
-      tags: ["Fitness", "Match Tempo", "Team Play"],
-      training: "3-4 sessions/week",
-      focus: "Match Tempo",
-      image: "/images/fitness-training-group.jpg",
-    },
-    {
-      ageGroup: "U-17",
-      title: "Elite Pathway",
-      description:
-        "Advanced preparation for exposure, leadership, and competitive football.",
-      tags: ["Exposure", "Leadership", "Pathway"],
-      training: "Advanced preparation",
-      focus: "Pathway",
-      image: "/images/match-action-youth.jpg",
-    },
-  ],
+  programs: academyPrograms.map((program) => ({
+    ageGroup: program.ageGroup,
+    title: program.title,
+    description: program.shortDescription,
+    tags: program.focusAreas.slice(0, 3),
+    training: program.training,
+    focus: program.focus,
+    image: program.image,
+  })),
 } as const;
 
 export const coachesLeadership = {
@@ -193,34 +158,34 @@ export const coachesLeadership = {
   description:
     "GCC Chalissery's coaching culture is built around structured player development, clear standards, and leadership that understands both modern football and the values of the local football community.",
   featured: {
-    name: "Coach Name",
-    role: "Head Coach / Academy Leadership",
-    specialization: "Player development direction",
+    name: "Nawas K",
+    role: "Technical Director",
+    specialization: "AFC B License Holder",
     quote:
       "Every player deserves a serious environment where discipline, confidence, teamwork, and football intelligence can grow together.",
-    image: "/images/logo-handover-wide.jpg",
+    image: "/academy-content/team/technical/nawas-k-technical-director.jpg",
   },
   coaches: [
     {
-      name: "Coach Name",
-      role: "Youth Development Coach",
-      specialization: "U-14 and U-17 development",
+      name: "Ramshad KH",
+      role: "Head Coach (U-15)",
+      specialization: "AFC C License Holder",
       focus: "Age-group coaching, match preparation, and long-term player progress.",
-      image: "/images/u14-team-green.jpg",
+      image: "/academy-content/team/coaches/ramshad-KH-head-coach.jpg",
     },
     {
-      name: "Coach Name",
-      role: "Technical Training Coach",
-      specialization: "Technical development",
+      name: "Sandeep",
+      role: "Head Coach (U-13)",
+      specialization: "AIFF D License Holder",
       focus: "Ball mastery, passing quality, first touch, and tactical awareness.",
-      image: "/images/fitness-training-group.jpg",
+      image: "/academy-content/team/coaches/sandeep-head-coach.jpg",
     },
     {
-      name: "Coach Name",
-      role: "Fitness & Performance Support",
-      specialization: "Fitness and discipline",
+      name: "Nikhil PV",
+      role: "Head Coach (U-10)",
+      specialization: "Grassroots License Holder",
       focus: "Physical preparation, training habits, and player responsibility.",
-      image: "/images/academy-group-event.jpg",
+      image: "/academy-content/team/coaches/nihkil-PV-head-coach.jpg",
     },
   ],
   philosophy: [
@@ -293,7 +258,7 @@ export const aiffHighlights = [
     icon: ShieldCheck,
   },
   {
-    title: "U-14 and U-17 Category Focus",
+    title: "U-10, U-13, and U-15 Category Focus",
     description:
       "Focused age-group development helps talented young players receive the right training at the right stage.",
     icon: Target,
@@ -311,21 +276,11 @@ export const achievementsRecognition = {
   title: "Proof of legacy, growth, and football development.",
   description:
     "GCC Chalissery's credibility is built through decades of community football, academy growth, tournament participation, and a professional development pathway for young players.",
-  featuredImage: "/images/young-champions-trophy.jpg",
-  supportImages: [
-    {
-      label: "Trophy presentation",
-      image: "/images/trophy-presentation.jpg",
-    },
-    {
-      label: "Community recognition",
-      image: "/images/newspaper-recognition.jpg",
-    },
-    {
-      label: "Academy culture",
-      image: "/images/academy-group-event.jpg",
-    },
-  ],
+  featuredImage: teamAchievements[0].image,
+  supportImages: teamAchievements.map((item) => ({
+    label: item.title,
+    image: item.image,
+  })),
   proofPoints: [
     {
       value: "45+",
@@ -333,14 +288,14 @@ export const achievementsRecognition = {
       description: "A trusted football identity rooted in Chalissery since 1980.",
     },
     {
-      value: "120+",
-      label: "Active Players",
-      description: "Young footballers training across structured academy groups.",
+      value: "2021",
+      label: "Academy Established",
+      description: "A structured academy model created for grassroots player development.",
     },
     {
-      value: "4",
-      label: "Development Pathways",
-      description: "Age-focused programs from foundation to elite preparation.",
+      value: "3",
+      label: "Age Categories",
+      description: "Programs for U-10, U-13, and U-15 football development.",
     },
     {
       value: "AIFF",
@@ -359,22 +314,22 @@ export const galleryStory = [
   {
     title: "Training",
     category: "Technical sessions",
-    image: "/images/fitness-training-group.jpg",
+    image: "/academy-content/media/WhatsApp Image 2026-06-23 at 12.38.58 PM.jpeg",
   },
   {
     title: "Team Culture",
     category: "Togetherness",
-    image: "/images/academy-group-event.jpg",
+    image: "/academy-content/media/WhatsApp Image 2026-06-23 at 12.50.26 PM.jpeg",
   },
   {
     title: "Match Preparation",
     category: "Competitive mindset",
-    image: "/images/match-action-youth.jpg",
+    image: "/academy-content/media/WhatsApp Image 2026-06-23 at 12.39.03 PM.jpeg",
   },
   {
     title: "Community",
     category: "Chalissery spirit",
-    image: "/images/player-handshake.jpg",
+    image: "/academy-content/media/WhatsApp Image 2026-06-23 at 12.33.48 PM.jpeg",
   },
 ] as const;
 
@@ -396,58 +351,27 @@ export const galleryMoments = {
     category: "Achievements",
     caption:
       "Trophy moments that reflect confidence, discipline, and the belief of a football-loving community.",
-    image: "/images/young-champions-trophy.jpg",
+    image: teamAchievements[0].image,
   },
-  items: [
-    {
-      title: "Fitness with purpose",
-      category: "Training",
-      caption: "Physical development and discipline built into the weekly academy rhythm.",
-      image: "/images/fitness-training-group.jpg",
-    },
-    {
-      title: "Match-day intensity",
-      category: "Matches",
-      caption: "Young players learning to compete with courage and clarity.",
-      image: "/images/match-action-goal.jpg",
-    },
-    {
-      title: "Tournament recognition",
-      category: "Tournaments",
-      caption: "Visual proof of participation, pride, and progress on the football stage.",
-      image: "/images/trophy-presentation.jpg",
-    },
-    {
-      title: "Squad presentation",
-      category: "Tournaments",
-      caption: "Young teams representing the academy with pride and preparation.",
-      image: "/images/u14-team-blue-wide-2.jpg",
-    },
-    {
-      title: "Community gathering",
-      category: "Community",
-      caption: "Families, players, and supporters moving together as one academy culture.",
-      image: "/images/academy-group-event.jpg",
-    },
-    {
-      title: "Academy identity",
-      category: "Community",
-      caption: "A badge and pathway shaped by the football people of Chalissery.",
-      image: "/images/logo-handover-wide.jpg",
-    },
-    {
-      title: "Legacy in the news",
-      category: "Achievements",
-      caption: "Recognition that connects GCC's past, present, and future.",
-      image: "/images/newspaper-recognition.jpg",
-    },
-    {
-      title: "U-14 team culture",
-      category: "Training",
-      caption: "Structured youth groups learning standards, discipline, and teamwork.",
-      image: "/images/u14-team-blue-wide.jpg",
-    },
-  ],
+  items: galleryPreviewImages.map((item) => ({
+    title: item.title,
+    category:
+      item.category === "Training Sessions"
+        ? "Training"
+        : item.category === "Match Days"
+          ? "Matches"
+          : item.category === "Tournament Moments"
+            ? "Tournaments"
+            : item.category === "Community Activities" ||
+                item.category === "Registration & Events"
+              ? "Community"
+              : item.category === "Team Celebrations" ||
+                  item.category === "Team Photos"
+                ? "Community"
+                : "Training",
+    caption: `${item.category} from GCC Chalissery Football Academy.`,
+    image: item.image,
+  })),
 } as const;
 
 export const testimonialsTrust = {
@@ -483,9 +407,9 @@ export const testimonialsTrust = {
   ],
   metrics: [
     "45+ Years Legacy",
-    "120+ Active Players",
+    "Academy Established 2021",
     "AIFF Affiliated",
-    "100+ Families Connected",
+    "Community Powered",
   ],
 } as const;
 
@@ -494,7 +418,7 @@ export const finalHomeCta = {
   title: "Your Football Journey Starts Here.",
   description:
     "Join GCC Chalissery Football Academy and become part of a football culture built on discipline, development and opportunity.",
-  image: "/images/match-action-youth.jpg",
+  image: "/academy-content/media/WhatsApp Image 2026-06-23 at 12.39.03 PM.jpeg",
   primaryAction: "Join Academy",
   secondaryAction: "Book Trial Session",
   tertiaryAction: "Contact Us",
@@ -511,7 +435,7 @@ export const aboutPreview = {
   title: "A community-powered academy with a professional football vision.",
   description:
     "Founded in 1980 as a local arts and sports club, GCC has grown through Kerala's football culture and Sevens tournaments into an AIFF affiliated academy committed to nurturing talented young players.",
-  image: "/images/logo-handover-wide.jpg",
+  image: "/academy-content/media/WhatsApp Image 2026-06-23 at 12.50.27 PM.jpeg",
 } as const;
 
 export const whyChooseGcc: (FeatureItem & {
@@ -580,57 +504,15 @@ export const achievementsPreview: AchievementItem[] = [
   },
   {
     label: "Focus",
-    value: "U-14/U-17",
+    value: "U-10/U-13/U-15",
     description: "Dedicated youth development for aspiring footballers.",
   },
 ];
 
-export const galleryPreview: GalleryItem[] = [
-  {
-    title: "Technical training",
-    category: "Training",
-    image: "/images/fitness-training-group.jpg",
-  },
-  {
-    title: "Team culture",
-    category: "Culture",
-    image: "/images/academy-group-event.jpg",
-  },
-  {
-    title: "Match preparation",
-    category: "Performance",
-    image: "/images/match-action-goal.jpg",
-  },
-  {
-    title: "Match intensity",
-    category: "Competition",
-    image: "/images/match-action-youth.jpg",
-  },
-  {
-    title: "U-14 squad identity",
-    category: "Team",
-    image: "/images/u14-team-blue-ground.jpg",
-  },
-  {
-    title: "Academy classroom",
-    category: "Learning",
-    image: "/images/academy-classroom-session.jpg",
-  },
-  {
-    title: "Player care",
-    category: "Support",
-    image: "/images/physio-announcement.jpg",
-  },
-  {
-    title: "Squad presentation",
-    category: "Academy",
-    image: "/images/u14-team-blue-wide-2.jpg",
-  },
-  {
-    title: "Community respect",
-    category: "Culture",
-    image: "/images/player-handshake.jpg",
-  },
-];
+export const galleryPreview: GalleryItem[] = galleryPreviewImages.map((item) => ({
+  title: item.title,
+  category: item.category,
+  image: item.image,
+}));
 
 export const achievementIcons = [Trophy, Award, Medal] as const;

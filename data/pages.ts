@@ -1,15 +1,15 @@
 export const pageImages = {
-  hero: "/images/u14-team-green.jpg",
-  culture: "/images/academy-group-event.jpg",
-  legacyRecognition: "/images/newspaper-recognition.jpg",
-  logoHandover: "/images/logo-handover-wide.jpg",
-  training: "/images/fitness-training-group.jpg",
-  handshake: "/images/player-handshake.jpg",
-  achievement: "/images/young-champions-trophy.jpg",
-  trophyPresentation: "/images/trophy-presentation.jpg",
-  galleryHero: "/images/u14-team-blue-wide.jpg",
-  matchAction: "/images/match-action-youth.jpg",
-  logo: "/images/gcc-logo.png",
+  hero: "/academy-content/media/WhatsApp Image 2026-06-23 at 12.38.56 PM.jpeg",
+  culture: "/academy-content/media/WhatsApp Image 2026-06-23 at 12.50.26 PM.jpeg",
+  legacyRecognition: "/academy-content/media/Screenshot 2026-06-25 at 9.14.42 AM.png",
+  logoHandover: "/academy-content/media/WhatsApp Image 2026-06-23 at 12.50.27 PM.jpeg",
+  training: "/academy-content/media/WhatsApp Image 2026-06-23 at 12.38.58 PM.jpeg",
+  handshake: "/academy-content/media/WhatsApp Image 2026-06-23 at 12.33.48 PM.jpeg",
+  achievement: "/academy-content/achievements/u-17-runnerup-jpg.jpeg",
+  trophyPresentation: "/academy-content/achievements/u-14-2nd-runnerup.jpg",
+  galleryHero: "/academy-content/media/WhatsApp Image 2026-06-23 at 12.33.46 PM.jpeg",
+  matchAction: "/academy-content/media/WhatsApp Image 2026-06-23 at 12.39.03 PM.jpeg",
+  logo: "/academy-content/logo/icon.png",
 } as const;
 
 export const aboutValues = [
@@ -21,19 +21,19 @@ export const aboutValues = [
 
 export const academyMethod = [
   {
-    title: "Assess",
+    title: "Practical ground sessions",
     description:
-      "Talented young players are identified across the U-14 and U-17 categories through ability, attitude, and readiness.",
+      "Saturday, Sunday, and school-holiday sessions run from 4:30 PM to 6:00 PM with technical, tactical, team-play, fitness, and decision-making work.",
   },
   {
-    title: "Develop",
+    title: "Home workout schedule",
     description:
-      "Structured sessions build technical skill, tactical understanding, discipline, and the habits required for higher-level football.",
+      "Players follow a 20-minute Monday-to-Friday home program with exercise guidance, video demos, and weekly progress tracking.",
   },
   {
-    title: "Compete",
+    title: "Personality development",
     description:
-      "Players are prepared for competitive opportunities in Kerala and beyond through a career-focused football pathway.",
+      "Monthly development sessions focus on discipline, communication, goal setting, mental toughness, nutrition, study balance, and leadership.",
   },
 ];
 

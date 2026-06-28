@@ -5,7 +5,10 @@ import { surfaceTokens } from "@/lib/design-system";
 type StatCardProps = React.ComponentPropsWithoutRef<"div"> & {
   index?: number;
   label?: string;
+  labelClassName?: string;
+  revealDelay?: number;
   value: string;
+  valueClassName?: string;
   variant?: "dark" | "light";
 };
 
@@ -13,14 +16,21 @@ export function StatCard({
   className,
   index,
   label,
+  labelClassName,
+  revealDelay = 0,
   value,
+  valueClassName,
   variant = "dark",
   ...props
 }: StatCardProps) {
   const isDark = variant === "dark";
 
   return (
-    <FadeIn className="h-full" variant="scaleIn">
+    <FadeIn
+      className="h-full"
+      transition={{ delay: revealDelay }}
+      variant="scaleIn"
+    >
       <div
         className={cn(
           "relative h-full overflow-hidden rounded-[1rem] p-5 transition duration-300 hover:-translate-y-1",
@@ -38,11 +48,21 @@ export function StatCard({
           )}
         />
         {typeof index === "number" ? (
-          <p className="text-xs font-black uppercase tracking-[0.16em] text-accent">
+          <p
+            className={cn(
+              "text-xs font-black uppercase tracking-[0.16em] text-accent",
+              labelClassName,
+            )}
+          >
             {String(index + 1).padStart(2, "0")}
           </p>
         ) : label ? (
-          <p className="text-xs font-black uppercase tracking-[0.16em] text-accent">
+          <p
+            className={cn(
+              "text-xs font-black uppercase tracking-[0.16em] text-accent",
+              labelClassName,
+            )}
+          >
             {label}
           </p>
         ) : null}
@@ -51,6 +71,7 @@ export function StatCard({
             index === undefined ? "mt-2 text-2xl" : "mt-3 text-xl",
             "font-black leading-tight",
             isDark ? "text-white" : "text-brand",
+            valueClassName,
           )}
         >
           {value}
