@@ -167,7 +167,7 @@ function EmailAddress() {
           description="For formal enquiries, program information, media, or academy communication, use the official email address."
         />
         <Link
-          className="group rounded-[1.15rem] border border-white/10 bg-white/[0.075] p-7 shadow-xl shadow-black/10 backdrop-blur-md transition hover:-translate-y-1 hover:border-accent/45 hover:bg-white/[0.1] sm:p-8"
+          className="group block max-w-full overflow-hidden rounded-[1.15rem] border border-white/10 bg-white/[0.075] p-6 shadow-xl shadow-black/10 backdrop-blur-md transition hover:-translate-y-1 hover:border-accent/45 hover:bg-white/[0.1] sm:p-8"
           href={`mailto:${academyContact.email}`}
           aria-label={`Send email to ${academyContact.email}`}
         >
@@ -175,7 +175,7 @@ function EmailAddress() {
           <p className="mt-6 text-xs font-black uppercase tracking-[0.16em] text-accent">
             Official Email
           </p>
-          <h2 className="mt-3 break-words text-3xl font-black leading-tight text-white sm:text-4xl">
+          <h2 className="mt-3 max-w-full overflow-hidden break-all text-[clamp(1.45rem,6.2vw,2rem)] font-black leading-tight text-white sm:break-words sm:text-4xl">
             {academyContact.email}
           </h2>
         </Link>

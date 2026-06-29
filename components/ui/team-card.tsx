@@ -140,7 +140,7 @@ function TeamMemberModal({
       {open ? (
         <motion.div
           animate={{ opacity: 1 }}
-          className="fixed inset-0 z-[1000] grid place-items-end bg-brand-strong/82 p-3 backdrop-blur-xl sm:place-items-center sm:p-6"
+          className="fixed inset-x-0 bottom-0 top-[76px] z-[1000] grid place-items-end bg-brand-strong/82 p-3 pt-4 backdrop-blur-xl sm:place-items-center sm:p-6 lg:top-[84px]"
           exit={{ opacity: 0 }}
           initial={{ opacity: 0 }}
           transition={{
@@ -156,7 +156,7 @@ function TeamMemberModal({
           />
           <motion.div
             aria-modal="true"
-            className="relative max-h-[92vh] w-full max-w-4xl overflow-y-auto rounded-[1.75rem] border border-white/14 bg-[linear-gradient(135deg,rgba(6,18,93,0.98),rgba(18,48,167,0.96))] p-4 text-white shadow-2xl shadow-black/40 sm:p-5"
+            className="relative max-h-[calc(100svh-6.75rem)] w-full max-w-4xl overflow-y-auto rounded-[1.35rem] border border-white/14 bg-[linear-gradient(135deg,rgba(6,18,93,0.98),rgba(18,48,167,0.96))] p-4 pt-16 text-white shadow-2xl shadow-black/40 sm:max-h-[calc(100svh-8rem)] sm:rounded-[1.75rem] sm:p-5"
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{
               opacity: 0,
@@ -176,7 +176,7 @@ function TeamMemberModal({
           >
             <button
               aria-label="Close details"
-              className="absolute right-4 top-4 z-10 grid size-11 place-items-center rounded-full border border-white/15 bg-white/10 text-white shadow-lg shadow-black/20 backdrop-blur transition hover:-translate-y-0.5 hover:border-accent/55 hover:text-accent"
+              className="sticky top-0 z-10 -mt-12 mb-1 ml-auto grid size-11 place-items-center rounded-full border border-white/15 bg-white/12 text-white shadow-lg shadow-black/20 backdrop-blur transition hover:-translate-y-0.5 hover:border-accent/55 hover:text-accent sm:absolute sm:right-4 sm:top-4 sm:m-0"
               onClick={onClose}
               type="button"
             >
@@ -184,7 +184,7 @@ function TeamMemberModal({
             </button>
 
             <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
-              <div className="relative min-h-[300px] overflow-hidden rounded-[1.35rem] bg-brand sm:min-h-[360px]">
+              <div className="relative min-h-[260px] overflow-hidden rounded-[1.35rem] bg-brand sm:min-h-[360px]">
                 <MemberImage
                   className="transition duration-700"
                   member={member}
@@ -199,7 +199,7 @@ function TeamMemberModal({
                     {category}
                   </p>
                 ) : null}
-                <h3 className="mt-3 text-4xl font-black leading-tight text-white sm:text-5xl">
+                <h3 className="mt-3 text-3xl font-black leading-tight text-white sm:text-5xl">
                   {member.name}
                 </h3>
                 <p className="mt-3 text-base font-black uppercase tracking-[0.14em] text-blue-50/70">

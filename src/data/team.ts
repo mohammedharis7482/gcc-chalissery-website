@@ -41,7 +41,7 @@ export const teamSections: readonly TeamSection[] = [
       {
         name: "Ikbal Chalissery",
         role: "Treasurer",
-        image: "/academy-content/team/management/Ikbal-chalissery-Treasurer.jpg",
+        image: "/academy-content/team/management/Ikbal-Chalissery-Treasurer.jpg",
       },
     ],
   },
