@@ -161,7 +161,7 @@ function TrainingPhilosophySection() {
       <Container className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
         <ImageCard
           alt="GCC Chalissery academy training group"
-          className="min-h-[440px] rounded-[1.5rem] shadow-2xl shadow-black/20 lg:min-h-[560px]"
+          className="min-h-[360px] rounded-[1.5rem] shadow-2xl shadow-black/20 sm:min-h-[440px] lg:min-h-[560px]"
           imageClassName="object-[center_46%]"
           sizes="(min-width: 1024px) 52vw, 100vw"
           src={academyImages.training}
@@ -219,7 +219,7 @@ function ThreePillarModel() {
         <div className="mt-12 grid gap-5 lg:grid-cols-3">
           {trainingPhilosophy.pillars.map((pillar, index) => (
             <FadeIn
-              className="group relative flex h-full min-h-[25rem] flex-col overflow-hidden rounded-[1.5rem] border border-white/12 bg-white/[0.085] p-6 shadow-2xl shadow-black/12 backdrop-blur-md transition duration-500 hover:-translate-y-1 hover:border-accent/50 hover:bg-white/[0.11] sm:p-7"
+              className="group relative flex h-full min-h-[20rem] flex-col overflow-hidden rounded-[1.5rem] border border-white/12 bg-white/[0.085] p-6 shadow-2xl shadow-black/12 backdrop-blur-md transition duration-500 hover:-translate-y-1 hover:border-accent/50 hover:bg-white/[0.11] sm:min-h-[25rem] sm:p-7"
               key={pillar.title}
               transition={{ delay: index * 0.06 }}
               variant="scaleIn"
@@ -288,7 +288,7 @@ function AgeCategories() {
         <div className="mt-12 grid gap-5 lg:grid-cols-3">
           {academyPrograms.map((program, index) => (
             <FadeIn
-              className="group relative min-h-[540px] overflow-hidden rounded-[1.5rem] border border-white/12 bg-brand shadow-2xl shadow-black/16 transition duration-500 hover:-translate-y-1 hover:border-accent/45 hover:shadow-2xl hover:shadow-black/22"
+              className="group relative min-h-[430px] overflow-hidden rounded-[1.5rem] border border-white/12 bg-brand shadow-2xl shadow-black/16 transition duration-500 hover:-translate-y-1 hover:border-accent/45 hover:shadow-2xl hover:shadow-black/22 sm:min-h-[540px]"
               key={program.title}
               transition={{ delay: index * 0.06 }}
               variant="scaleIn"
@@ -378,7 +378,7 @@ function WeeklyTrainingSchedule() {
 
         <ImageCard
           alt="GCC Chalissery academy training schedule"
-          className="min-h-[440px] rounded-[1.5rem] shadow-2xl shadow-black/18 lg:min-h-[540px]"
+          className="min-h-[360px] rounded-[1.5rem] shadow-2xl shadow-black/18 sm:min-h-[440px] lg:min-h-[540px]"
           imageClassName="object-[center_42%]"
           sizes="(min-width: 1024px) 50vw, 100vw"
           src={academyImages.schedule}
@@ -413,7 +413,7 @@ function PlayerDevelopmentFocus() {
           />
           <ImageCard
             alt="GCC Chalissery player development culture"
-            className="mt-8 min-h-[420px] flex-1 rounded-[1.5rem] shadow-2xl shadow-black/18 lg:min-h-0"
+            className="mt-8 min-h-[340px] flex-1 rounded-[1.5rem] shadow-2xl shadow-black/18 sm:min-h-[420px] lg:min-h-0"
             imageClassName="object-[center_45%]"
             sizes="(min-width: 1024px) 38vw, 100vw"
             src={academyImages.focus}
@@ -432,7 +432,7 @@ function PlayerDevelopmentFocus() {
         <div className="grid gap-5 md:grid-cols-2 lg:auto-rows-fr">
           {focusItems.map((item, index) => (
             <FeatureCard
-              className="min-h-[14.5rem] rounded-[1.5rem] p-6 sm:p-7 lg:min-h-0"
+              className="min-h-[11.5rem] rounded-[1.5rem] p-6 sm:min-h-[14.5rem] sm:p-7 lg:min-h-0"
               description={item.description}
               icon={item.icon}
               key={item.title}
@@ -463,7 +463,8 @@ function FinalCta() {
       overlayClassName="bg-[linear-gradient(90deg,rgba(6,18,93,0.94),rgba(13,44,149,0.78)_52%,rgba(20,75,176,0.62)),linear-gradient(180deg,rgba(18,48,167,0.2),rgba(4,12,70,0.7)),radial-gradient(circle_at_82%_18%,rgba(248,196,0,0.18),transparent_25rem)]"
       innerGridClassName="gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(30rem,0.92fr)] lg:items-center xl:gap-16"
       title={["Start with the right", "football environment."]}
-      trustCardClassName="min-h-[10.25rem] rounded-[1.5rem] border-white/14 bg-white/[0.09] p-7 shadow-2xl shadow-black/12 sm:p-8"
+      titleClassName="max-w-[42rem] text-[clamp(2.35rem,10vw,3.7rem)] leading-[1.02] sm:text-[clamp(3rem,6.6vw,5.35rem)] sm:leading-[0.98] lg:text-[clamp(3.4rem,5.2vw,5.65rem)]"
+      trustCardClassName="min-h-[7.5rem] rounded-[1.25rem] border-white/14 bg-white/[0.09] p-5 shadow-2xl shadow-black/12 sm:min-h-[10.25rem] sm:rounded-[1.5rem] sm:p-8"
       trustGridClassName="auto-rows-fr gap-5 sm:grid-cols-2 lg:w-full lg:max-w-[42rem] lg:self-center lg:justify-self-end"
       trustIndicators={[
         "Football + Education",
@@ -472,7 +473,7 @@ function FinalCta() {
         "Community Driven",
       ]}
       trustLabelClassName="text-[0.72rem] tracking-[0.18em]"
-      trustValueClassName="mt-6 max-w-[13rem] break-normal text-[1.08rem] leading-[1.28] [hyphens:none] [overflow-wrap:normal] sm:text-[1.18rem]"
+      trustValueClassName="mt-4 max-w-[13rem] break-normal text-[1.08rem] leading-[1.28] [hyphens:none] [overflow-wrap:normal] sm:mt-6 sm:text-[1.18rem]"
     />
   );
 }

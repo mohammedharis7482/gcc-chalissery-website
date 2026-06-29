@@ -96,7 +96,7 @@ function ContactInformation() {
           <div className="grid gap-5 md:grid-cols-3">
             {infoCards.map((item) => (
               <FeatureCard
-                className="min-h-[220px]"
+                className="min-h-[180px] sm:min-h-[220px]"
                 description={item.description}
                 icon={item.icon}
                 key={item.title}
@@ -117,7 +117,7 @@ function WhatsAppContact() {
       <Container className="grid gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
         <ImageCard
           alt="GCC Chalissery academy WhatsApp enquiry"
-          className="min-h-[460px] lg:min-h-[520px]"
+          className="min-h-[360px] sm:min-h-[460px] lg:min-h-[520px]"
           imageClassName="object-[50%_36%]"
           sizes="(min-width: 1024px) 50vw, 100vw"
           src={contactImages.whatsapp}
@@ -197,14 +197,14 @@ function AcademyLocation() {
             description="GCC Chalissery Football Academy is rooted in Chalissery, Kerala, India, serving young players and football families from the local community and surrounding areas."
           />
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
-            <StatCard className="min-h-[128px]" label="Place" value="Chalissery" />
-            <StatCard className="min-h-[128px]" label="Region" value="Kerala, India" />
+            <StatCard className="min-h-[112px] sm:min-h-[128px]" label="Place" value="Chalissery" />
+            <StatCard className="min-h-[112px] sm:min-h-[128px]" label="Region" value="Kerala, India" />
           </div>
         </div>
 
         <ImageCard
           alt="GCC Chalissery academy location and community"
-          className="min-h-[430px]"
+          className="min-h-[340px] sm:min-h-[430px]"
           imageClassName="object-[50%_42%]"
           sizes="(min-width: 1024px) 42vw, 100vw"
           src={contactImages.location}
@@ -231,7 +231,7 @@ function GoogleMapArea() {
     >
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_20%,rgba(248,196,0,0.11),transparent_24rem),radial-gradient(circle_at_76%_72%,rgba(21,174,234,0.16),transparent_28rem)]" />
       <Container>
-        <div className="relative min-h-[430px] overflow-hidden rounded-[1.5rem] border border-white/12 bg-white/[0.08] shadow-2xl shadow-black/18 backdrop-blur-md">
+        <div className="relative min-h-[360px] overflow-hidden rounded-[1.5rem] border border-white/12 bg-white/[0.08] shadow-2xl shadow-black/18 backdrop-blur-md sm:min-h-[430px]">
           <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(248,196,0,0.18),transparent_32%),radial-gradient(circle_at_74%_28%,rgba(21,174,234,0.18),transparent_28rem)]" />
           <div className="absolute inset-6 border border-white/10 sm:inset-8" />
           <div className="absolute inset-0 grid place-items-center p-6 text-center sm:p-8">
@@ -240,7 +240,7 @@ function GoogleMapArea() {
               <p className="mt-6 text-xs font-black uppercase tracking-[0.18em] text-accent">
                 Google Map
               </p>
-              <h2 className="mx-auto mt-4 max-w-3xl text-4xl font-black leading-tight sm:text-5xl">
+              <h2 className="mx-auto mt-4 max-w-3xl text-3xl font-black leading-tight sm:text-5xl">
                 Open directions to GCC Arts and Sports Club, Chalissery.
               </h2>
               <p className="mx-auto mt-4 max-w-lg text-sm leading-7 text-blue-50/74">
@@ -317,7 +317,7 @@ function SocialMediaLinks() {
 
             return (
               <Link
-                className="group flex min-h-[170px] flex-col justify-between rounded-[1rem] border border-white/10 bg-white/[0.075] p-6 shadow-xl shadow-black/10 backdrop-blur-md transition hover:-translate-y-1 hover:border-accent/45 hover:bg-white/[0.1]"
+                className="group flex min-h-[140px] flex-col justify-between rounded-[1rem] border border-white/10 bg-white/[0.075] p-5 shadow-xl shadow-black/10 backdrop-blur-md transition hover:-translate-y-1 hover:border-accent/45 hover:bg-white/[0.1] sm:min-h-[170px] sm:p-6"
                 href={item.href}
                 key={item.label}
                 target="_blank"

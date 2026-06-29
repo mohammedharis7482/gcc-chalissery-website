@@ -42,7 +42,7 @@ export default function GalleryPage() {
         <Container className="grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
           <ImageCard
             alt="GCC Chalissery featured gallery moment"
-            className="min-h-[560px]"
+            className="min-h-[400px] sm:min-h-[560px]"
             imageClassName="object-[center_42%]"
             sizes="(min-width: 1024px) 54vw, 100vw"
             src={galleryImages[0].image}
@@ -114,7 +114,7 @@ export default function GalleryPage() {
         <Container className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch">
           <ImageCard
             alt="GCC Chalissery match action spotlight"
-            className="min-h-[460px]"
+            className="min-h-[360px] sm:min-h-[460px]"
             imageClassName="object-[center_38%]"
             sizes="(min-width: 1024px) 56vw, 100vw"
             src={galleryImages.find((item) => item.category === "Match Days")?.image ?? galleryImages[0].image}

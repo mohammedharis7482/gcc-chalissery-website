@@ -37,7 +37,7 @@ export function FadeIn({
       viewport={viewport ?? motionViewport}
       variants={motionVariants[variant]}
       transition={{
-        duration: 0.58,
+        duration: 0.68,
         ease: motionEase,
         ...transition,
       }}

@@ -10,7 +10,7 @@ export function SiteFooter() {
   const academyLinks = [
     { label: "Programs", href: "/academy" },
     { label: "Our Team", href: "/team" },
-    { label: "Admissions", href: "/admissions" },
+    { label: "Admissions", href: "/contact" },
     { label: "Gallery", href: "/gallery" },
     { label: "Achievements", href: "/achievements" },
   ];

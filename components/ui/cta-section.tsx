@@ -19,6 +19,7 @@ type CTASectionProps = {
   innerGridClassName?: string;
   overlayClassName?: string;
   title: readonly string[];
+  titleClassName?: string;
   trustCardClassName?: string;
   trustGridClassName?: string;
   trustIndicators?: readonly string[];
@@ -36,6 +37,7 @@ export function CTASection({
   innerGridClassName,
   overlayClassName,
   title,
+  titleClassName,
   trustCardClassName,
   trustGridClassName,
   trustIndicators = [],
@@ -76,7 +78,10 @@ export function CTASection({
             </Badge>
             <SplitLineReveal
               as="h2"
-              className="mt-6 max-w-5xl text-balance text-[clamp(3.4rem,9vw,7.5rem)] font-black leading-[0.9] text-white"
+              className={cn(
+                "mt-6 max-w-5xl text-balance text-[clamp(2.45rem,11vw,4rem)] font-black leading-[0.95] text-white sm:text-[clamp(3.4rem,9vw,7.5rem)] sm:leading-[0.9]",
+                titleClassName,
+              )}
               lines={title}
               trigger="load"
             />
@@ -84,7 +89,7 @@ export function CTASection({
               {description}
             </p>
             {actions ? (
-              <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-8 flex flex-col gap-3 [&>*]:w-full sm:mt-10 sm:flex-row sm:[&>*]:w-auto">
                 {actions}
               </div>
             ) : null}

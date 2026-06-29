@@ -114,7 +114,7 @@ export function GalleryMomentsSection({ moments }: GalleryMomentsSectionProps) {
         >
           <AnimatePresence mode="wait">
             <motion.div
-              className="group relative min-h-[520px] overflow-hidden rounded-[1.35rem] border border-white/10 bg-brand shadow-2xl shadow-black/22 sm:min-h-[680px]"
+              className="group relative min-h-[360px] overflow-hidden rounded-[1.35rem] border border-white/10 bg-brand shadow-2xl shadow-black/22 sm:min-h-[520px] lg:min-h-[680px]"
               key={featuredMoment.title}
               initial={{ opacity: 0, scale: 0.985, y: 18 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -137,7 +137,7 @@ export function GalleryMomentsSection({ moments }: GalleryMomentsSectionProps) {
                 <p className="text-xs font-black uppercase tracking-[0.18em] text-accent">
                   {featuredMoment.category}
                 </p>
-                <h3 className="mt-3 max-w-2xl text-4xl font-black leading-tight text-white sm:text-5xl">
+                <h3 className="mt-3 line-clamp-3 max-w-2xl text-3xl font-black leading-tight text-white sm:text-5xl">
                   {featuredMoment.title}
                 </h3>
                 <p className="mt-4 max-w-xl text-sm leading-7 text-blue-50/76 sm:text-base">
@@ -152,7 +152,7 @@ export function GalleryMomentsSection({ moments }: GalleryMomentsSectionProps) {
               {masonryItems.map((item, index) => (
                 <motion.article
                   className={[
-                    "group relative min-h-[260px] overflow-hidden rounded-[1rem] border border-white/10 bg-white/10 shadow-xl shadow-black/12",
+                    "group relative min-h-[220px] overflow-hidden rounded-[1rem] border border-white/10 bg-white/10 shadow-xl shadow-black/12 sm:min-h-[260px]",
                     index === 0 || index === 5 ? "sm:row-span-2 sm:min-h-[420px]" : "",
                   ].join(" ")}
                   key={`${activeCategory}-${item.title}`}

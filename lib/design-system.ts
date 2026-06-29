@@ -11,9 +11,9 @@ export const colorTokens = {
 } as const;
 
 export const spacingTokens = {
-  section: "py-24 sm:py-32 lg:py-36",
-  sectionCompact: "py-20 sm:py-24 lg:py-28",
-  sectionGrand: "py-24 sm:py-32 lg:py-40",
+  section: "py-20 sm:py-28 lg:py-36",
+  sectionCompact: "py-16 sm:py-24 lg:py-28",
+  sectionGrand: "py-20 sm:py-32 lg:py-40",
   sectionGap: "mt-12 sm:mt-14",
   gridGap: "gap-5",
 } as const;

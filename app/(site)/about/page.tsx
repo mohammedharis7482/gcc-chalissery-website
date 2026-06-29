@@ -389,7 +389,7 @@ function FinalCta() {
       innerGridClassName="gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(30rem,0.95fr)] lg:items-center xl:gap-16"
       overlayClassName="bg-[linear-gradient(90deg,rgba(8,30,118,0.92),rgba(20,59,180,0.76)_48%,rgba(29,139,211,0.54)),linear-gradient(180deg,rgba(8,30,118,0.18),rgba(8,30,118,0.72)),radial-gradient(circle_at_78%_18%,rgba(248,196,0,0.24),transparent_25rem),radial-gradient(circle_at_18%_78%,rgba(21,174,234,0.24),transparent_30rem)]"
       title={["Start the conversation", "with GCC."]}
-      trustCardClassName="min-h-[10.25rem] rounded-[1.5rem] border-white/14 bg-white/[0.09] p-7 shadow-2xl shadow-black/12 sm:p-8"
+      trustCardClassName="min-h-[7.5rem] rounded-[1.25rem] border-white/14 bg-white/[0.09] p-5 shadow-2xl shadow-black/12 sm:min-h-[10.25rem] sm:rounded-[1.5rem] sm:p-8"
       trustGridClassName="auto-rows-fr gap-5 sm:grid-cols-2 lg:w-full lg:max-w-[42rem] lg:self-center lg:justify-self-end"
       trustLabelClassName="text-[0.72rem] tracking-[0.18em]"
       trustValueClassName="mt-6 max-w-[13rem] break-normal text-[1.08rem] leading-[1.28] [hyphens:none] [overflow-wrap:normal] sm:text-[1.18rem]"

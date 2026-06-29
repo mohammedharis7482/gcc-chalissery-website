@@ -144,10 +144,12 @@ export default function TeamPage() {
         overlayClassName="bg-[linear-gradient(90deg,rgba(6,18,93,0.94),rgba(13,44,149,0.78)_52%,rgba(20,75,176,0.62)),linear-gradient(180deg,rgba(18,48,167,0.2),rgba(4,12,70,0.7)),radial-gradient(circle_at_82%_18%,rgba(248,196,0,0.18),transparent_25rem)]"
         innerGridClassName="gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(30rem,0.92fr)] lg:items-center xl:gap-16"
         title={[
-          "Guided by people who believe",
-          "in every player's development.",
+          "Guided by people",
+          "who believe in every",
+          "player’s development.",
         ]}
-        trustCardClassName="min-h-[10.25rem] rounded-[1.5rem] border-white/14 bg-white/[0.09] p-7 shadow-2xl shadow-black/12 sm:p-8"
+        titleClassName="max-w-[46rem] text-[clamp(2.25rem,9.4vw,3.55rem)] leading-[1.03] sm:text-[clamp(3rem,6.2vw,5.15rem)] sm:leading-[0.99] lg:text-[clamp(3.25rem,4.8vw,5.35rem)]"
+        trustCardClassName="min-h-[7.5rem] rounded-[1.25rem] border-white/14 bg-white/[0.09] p-5 shadow-2xl shadow-black/12 sm:min-h-[10.25rem] sm:rounded-[1.5rem] sm:p-8"
         trustGridClassName="auto-rows-fr gap-5 sm:grid-cols-2 lg:w-full lg:max-w-[42rem] lg:self-center lg:justify-self-end"
         trustIndicators={[
           "Since 1980",
@@ -156,7 +158,7 @@ export default function TeamPage() {
           "Community Powered",
         ]}
         trustLabelClassName="text-[0.72rem] tracking-[0.18em]"
-        trustValueClassName="mt-6 max-w-[13rem] break-normal text-[1.08rem] leading-[1.28] [hyphens:none] [overflow-wrap:normal] sm:text-[1.18rem]"
+        trustValueClassName="mt-4 max-w-[13rem] break-normal text-[1.08rem] leading-[1.28] [hyphens:none] [overflow-wrap:normal] sm:mt-6 sm:text-[1.18rem]"
       />
     </>
   );

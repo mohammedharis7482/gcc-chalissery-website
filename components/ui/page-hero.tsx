@@ -67,10 +67,10 @@ export function PageHero({
         </FadeIn>
 
         {stats.length > 0 ? (
-          <div className="mt-12 grid gap-3 border-t border-white/15 pt-7 sm:grid-cols-3 lg:max-w-4xl">
+          <div className="mt-10 grid gap-3 border-t border-white/15 pt-6 sm:mt-12 sm:grid-cols-3 sm:pt-7 lg:max-w-4xl">
             {stats.map((stat) => (
               <StatCard
-                className="rounded-none"
+                className="min-h-[112px] rounded-[1rem] sm:min-h-[128px]"
                 key={stat.label}
                 label={stat.label}
                 value={stat.value}

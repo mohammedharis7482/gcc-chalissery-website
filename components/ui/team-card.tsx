@@ -184,7 +184,7 @@ function TeamMemberModal({
             </button>
 
             <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
-              <div className="relative min-h-[360px] overflow-hidden rounded-[1.35rem] bg-brand">
+              <div className="relative min-h-[300px] overflow-hidden rounded-[1.35rem] bg-brand sm:min-h-[360px]">
                 <MemberImage
                   className="transition duration-700"
                   member={member}
@@ -243,7 +243,9 @@ export function TeamCard({
         <article
           className={cn(
             "relative flex h-full flex-col",
-            compact ? "min-h-[18.75rem]" : "min-h-[21.75rem]",
+            compact
+              ? "min-h-[16.5rem] sm:min-h-[18.75rem]"
+              : "min-h-[18.25rem] sm:min-h-[21.75rem]",
           )}
         >
           <div className="absolute inset-x-0 top-0 z-10 h-0.5 bg-gradient-to-r from-accent via-accent/35 to-transparent opacity-70 transition group-hover:opacity-100" />
@@ -252,7 +254,9 @@ export function TeamCard({
           <div
             className={cn(
               "relative overflow-hidden bg-brand",
-              compact ? "aspect-[4/3.55]" : "aspect-[4/4.15]",
+              compact
+                ? "h-[15rem] sm:h-[16rem] lg:h-[17rem] xl:h-[15.5rem]"
+                : "aspect-[4/3.3] sm:aspect-[4/4.15]",
             )}
           >
             <MemberImage
@@ -281,7 +285,13 @@ export function TeamCard({
             </div>
           </div>
 
-          <div className={cn(compact ? "p-4 pt-3" : "p-4 pt-3 sm:p-5 sm:pt-4")}>
+          <div
+            className={cn(
+              compact
+                ? "flex flex-1 items-center p-4 sm:px-5 sm:py-5"
+                : "p-4 pt-3 sm:p-5 sm:pt-4",
+            )}
+          >
             <button
               className="group/button inline-flex h-11 w-full items-center justify-between rounded-full border border-white/14 bg-white/[0.075] px-4 text-xs font-black uppercase tracking-[0.12em] text-white shadow-lg shadow-black/5 transition duration-300 hover:border-accent/70 hover:bg-accent hover:text-brand-strong hover:shadow-accent/18"
               onClick={() => setOpen(true)}

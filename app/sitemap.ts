@@ -7,7 +7,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = Array.from(new Set([
     "/",
     ...primaryNav.map((item) => item.href),
-    "/admissions",
     ...newsItems.map((item) => `/news/${item.slug}`),
   ]));
 

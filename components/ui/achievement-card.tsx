@@ -188,7 +188,7 @@ function DetailsModal({
             </button>
 
             <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
-              <div className="relative min-h-[360px] overflow-hidden rounded-[1.35rem] bg-brand">
+            <div className="relative min-h-[300px] overflow-hidden rounded-[1.35rem] bg-brand sm:min-h-[360px]">
                 <Image
                   alt={imageAlt}
                   className={`size-full object-cover ${imageClassName}`}
@@ -231,7 +231,7 @@ export function AchievementCard({ achievement }: AchievementCardProps) {
 
   return (
     <>
-      <FadeIn className="group relative min-h-[470px] overflow-hidden rounded-[1.6rem] border border-white/12 bg-brand shadow-2xl shadow-black/16 transition duration-500 hover:-translate-y-1 hover:border-accent/50 hover:shadow-black/22">
+      <FadeIn className="group relative min-h-[390px] overflow-hidden rounded-[1.6rem] border border-white/12 bg-brand shadow-2xl shadow-black/16 transition duration-500 hover:-translate-y-1 hover:border-accent/50 hover:shadow-black/22 sm:min-h-[470px]">
         <Image
           alt={achievement.title}
           className="size-full object-cover object-center transition duration-700 group-hover:scale-[1.04]"
@@ -243,11 +243,11 @@ export function AchievementCard({ achievement }: AchievementCardProps) {
         <div className="absolute left-5 top-5 rounded-full border border-white/15 bg-white/12 px-4 py-2 text-xs font-black uppercase tracking-[0.14em] text-accent backdrop-blur-md">
           {achievement.year}
         </div>
-        <div className="absolute bottom-0 left-0 right-0 p-6">
+        <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
           <p className="text-[0.68rem] font-black uppercase tracking-[0.16em] text-accent">
             {competition}
           </p>
-          <h3 className="mt-3 text-2xl font-black leading-tight text-white">
+          <h3 className="mt-3 line-clamp-3 text-[1.45rem] font-black leading-tight text-white sm:text-2xl">
             {result}
           </h3>
           <p className="mt-3 line-clamp-3 text-sm leading-7 text-blue-50/76">
@@ -298,9 +298,9 @@ export function PlayerAchievementCard({
   return (
     <>
       <FadeIn className="group relative h-full overflow-hidden rounded-[1.6rem] border border-white/12 bg-[linear-gradient(145deg,rgba(255,255,255,0.115),rgba(255,255,255,0.052))] shadow-2xl shadow-black/14 backdrop-blur-md transition duration-500 hover:-translate-y-1 hover:border-accent/50 hover:bg-white/[0.12] hover:shadow-black/20">
-        <article className="relative flex h-full min-h-[22.5rem] flex-col">
+        <article className="relative flex h-full min-h-[18.75rem] flex-col sm:min-h-[22.5rem]">
           <div className="absolute inset-x-0 top-0 z-10 h-0.5 bg-gradient-to-r from-accent via-accent/35 to-transparent opacity-70 transition group-hover:opacity-100" />
-          <div className="relative aspect-[4/4.05] overflow-hidden bg-brand">
+          <div className="relative aspect-[4/3.35] overflow-hidden bg-brand sm:aspect-[4/4.05]">
             <Image
               alt={`${achievement.name} - ${achievement.achievement}`}
               className={`size-full object-cover transition duration-700 group-hover:scale-[1.04] ${getPlayerImagePosition(achievement.name)}`}
@@ -313,10 +313,10 @@ export function PlayerAchievementCard({
               <p className="text-[0.64rem] font-black uppercase tracking-[0.15em] text-accent">
                 Player Achievement
               </p>
-              <h3 className="mt-2 text-xl font-black leading-tight text-white">
+              <h3 className="mt-2 line-clamp-2 text-lg font-black leading-tight text-white sm:text-xl">
                 {achievement.name}
               </h3>
-              <p className="mt-2 text-sm font-bold leading-6 text-blue-50/82">
+              <p className="mt-2 line-clamp-2 text-sm font-bold leading-6 text-blue-50/82">
                 {headline}
               </p>
             </div>

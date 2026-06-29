@@ -6,8 +6,8 @@ export const motionEase = [0.22, 1, 0.36, 1] as const;
 
 export const motionDurations = {
   hover: 0.34,
-  reveal: 0.68,
-  imageReveal: 0.86,
+  reveal: 0.72,
+  imageReveal: 0.78,
   slow: 1.05,
 } as const;
 
@@ -18,7 +18,7 @@ export const premiumTransition = {
 
 export const motionVariants = {
   fadeUp: {
-    hidden: { opacity: 0, y: 22 },
+    hidden: { opacity: 0, y: 32 },
     visible: { opacity: 1, y: 0 },
   },
   fadeIn: {
@@ -35,7 +35,7 @@ export const motionVariants = {
     },
   },
   imageReveal: {
-    hidden: { opacity: 0, scale: 1.035, clipPath: "inset(10% 0% 10% 0%)" },
+    hidden: { opacity: 0, scale: 1.03, clipPath: "inset(8% 0% 8% 0%)" },
     visible: { opacity: 1, scale: 1, clipPath: "inset(0% 0% 0% 0%)" },
   },
   scaleIn: {

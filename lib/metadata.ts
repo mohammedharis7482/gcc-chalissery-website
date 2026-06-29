@@ -2,6 +2,18 @@ import type { Metadata } from "next";
 
 import { siteConfig } from "@/data/site";
 
+const defaultKeywords = [
+  "GCC Chalissery",
+  "GCC Football Academy",
+  "Chalissery Football Academy",
+  "Kerala Football Academy",
+  "AIFF affiliated academy",
+  "youth football training Kerala",
+  "U10 football academy",
+  "U13 football academy",
+  "U15 football academy",
+];
+
 type MetadataInput = {
   absoluteTitle?: string;
   title?: string;
@@ -22,6 +34,7 @@ export function createMetadata({
   return {
     title: pageTitle,
     description,
+    keywords: defaultKeywords,
     metadataBase: new URL(siteConfig.url),
     alternates: {
       canonical: path,
@@ -41,6 +54,12 @@ export function createMetadata({
       siteName: siteConfig.name,
       locale: siteConfig.locale,
       type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: pageTitle,
+      description,
+      images: ["/logos/gcc-logo.png"],
     },
     icons: {
       icon: "/icon.png",

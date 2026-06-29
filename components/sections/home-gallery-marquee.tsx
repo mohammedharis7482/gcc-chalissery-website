@@ -35,9 +35,9 @@ export function HomeGalleryMarquee({ images }: HomeGalleryMarqueeProps) {
         </div>
       </Container>
 
-      <div className="relative mt-12 overflow-hidden px-4 sm:px-6 lg:px-8">
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-14 bg-gradient-to-r from-[#eef6ff] to-transparent sm:w-24" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-14 bg-gradient-to-l from-[#dcedff] to-transparent sm:w-24" />
+      <div className="relative mt-10 overflow-hidden px-6 sm:mt-12 sm:px-6 lg:px-8">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 hidden w-16 bg-gradient-to-r from-[#e6f3ff]/55 to-transparent lg:block" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 hidden w-16 bg-gradient-to-l from-[#d9ecff]/55 to-transparent lg:block" />
         <div
           className="home-gallery-marquee"
         >
@@ -45,7 +45,7 @@ export function HomeGalleryMarquee({ images }: HomeGalleryMarqueeProps) {
             <div className="flex shrink-0 gap-4 pr-4 sm:gap-6 sm:pr-6" key={group}>
               {images.map((item) => (
                 <article
-                  className="group relative h-[320px] w-[78vw] max-w-[440px] shrink-0 overflow-hidden rounded-[1.5rem] border border-white/55 bg-white shadow-2xl shadow-brand/8 ring-1 ring-brand/5 transition duration-500 hover:-translate-y-1 hover:border-accent/65 hover:shadow-2xl hover:shadow-brand/14 sm:h-[360px] sm:w-[420px] lg:w-[460px]"
+                  className="group relative h-[280px] w-[84vw] max-w-[420px] shrink-0 overflow-hidden rounded-[1.35rem] border border-white/55 bg-white shadow-2xl shadow-brand/8 ring-1 ring-brand/5 transition duration-500 hover:-translate-y-1 hover:border-accent/65 hover:shadow-2xl hover:shadow-brand/14 sm:h-[360px] sm:w-[420px] sm:rounded-[1.5rem] lg:w-[460px]"
                   key={`${item.title}-${item.image}-${group}`}
                 >
                   <Image
@@ -56,11 +56,11 @@ export function HomeGalleryMarquee({ images }: HomeGalleryMarqueeProps) {
                     src={item.image}
                   />
                   <div className="absolute inset-x-0 bottom-0 h-[58%] bg-gradient-to-t from-brand-strong/76 via-brand-strong/24 to-transparent transition duration-500 group-hover:from-brand-strong/82" />
-                  <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
                     <p className="text-xs font-black uppercase tracking-[0.18em] text-accent">
                       {item.category}
                     </p>
-                    <h3 className="mt-2 max-w-sm text-2xl font-black leading-tight text-white">
+                    <h3 className="mt-2 line-clamp-3 max-w-sm text-[1.35rem] font-black leading-tight text-white sm:text-2xl">
                       {item.title}
                     </h3>
                   </div>

@@ -202,7 +202,7 @@ export function FullGallerySection({
                   </p>
                   <h2
                     className={[
-                      "mt-3 max-w-xl font-black leading-tight text-white",
+                      "mt-3 line-clamp-3 max-w-xl font-black leading-tight text-white",
                       index === 0
                         ? "text-4xl sm:text-5xl"
                         : "text-2xl sm:text-3xl",
@@ -262,7 +262,7 @@ export function FullGallerySection({
                   <p className="text-[0.68rem] font-black uppercase tracking-[0.16em] text-accent">
                     {item.category}
                   </p>
-                  <h2 className="mt-2 text-[1.45rem] font-black leading-tight sm:text-2xl">
+                  <h2 className="mt-2 line-clamp-3 text-[1.35rem] font-black leading-tight sm:text-2xl">
                     {item.title}
                   </h2>
                 </div>
